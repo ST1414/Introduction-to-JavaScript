@@ -1,6 +1,6 @@
 /*🏋️‍♂️🏋️‍♂️🏋️‍♂️🏋️‍♂️🏋️‍♂️🏋️‍♂️🏋️‍♂️🏋️‍♂️🏋️‍♂️ Task 1: Warm-up! 🏋️‍♂️🏋️‍♂️🏋️‍♂️🏋️‍♂️🏋️‍♂️🏋️‍♂️🏋️‍♂️🏋️‍♂️🏋️‍♂️*/
 
-const { numberTypeAnnotation } = require("@babel/types");
+const { numberTypeAnnotation, classExpression } = require("@babel/types");
 
 /*MAKE SURE TO RETURN ALL OF THE ANSWERS INSIDE OF A FUNCTION (tasks 1d through task 7), IF YOU DON'T, THE AUTOGRADER WILL NOT WORK*/
 
@@ -119,10 +119,27 @@ Puppies less than 1 year
 NOTE: If done correctly, a weight of 15 lbs and age of 1 year would return 0.44999999999999996
 */  
 
-function hungryDog(/*add your code here*/){
-  /*add your code here*/
+function hungryDog(weight, age){
+  if (age >= 1){ /* Equal or older than 1 year */
+    if (weight > 15){ /* Heavier than 15 lbs */
+      return weight * 0.02;
+    } else if (weight > 11) { /* Heavier than 11 lbs */
+      return weight * 0.03;
+    } else if (weight > 6){ /* Heavier than 6 lbs */
+      return weight * 0.04;
+    } else { /* Up to 5lbs */
+      return weight * 0.05;
+    }
+  } else if (age >= 0.583){ /* Equal or older than 7 mo*/
+    return weight * 0.04;
+  } else if (age >= 0.33){ /* Equal or older than 4 mo*/
+    return weight * 0.05;
+  } else if (age >= 0.16) {
+    return weight * 0.10;
+  }
 }
 
+Test cases
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
