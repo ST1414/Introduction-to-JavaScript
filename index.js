@@ -1,5 +1,7 @@
 /*🏋️‍♂️🏋️‍♂️🏋️‍♂️🏋️‍♂️🏋️‍♂️🏋️‍♂️🏋️‍♂️🏋️‍♂️🏋️‍♂️ Task 1: Warm-up! 🏋️‍♂️🏋️‍♂️🏋️‍♂️🏋️‍♂️🏋️‍♂️🏋️‍♂️🏋️‍♂️🏋️‍♂️🏋️‍♂️*/
 
+const { numberTypeAnnotation } = require("@babel/types");
+
 /*MAKE SURE TO RETURN ALL OF THE ANSWERS INSIDE OF A FUNCTION (tasks 1d through task 7), IF YOU DON'T, THE AUTOGRADER WILL NOT WORK*/
 
 // task 1a, 1b, and 1c are not autograded
@@ -19,7 +21,8 @@ Do the following:
 
    HINT: no function required
 */
-
+let votingAge = 18;
+console.log(votingAge);
 
 
 /*
@@ -32,9 +35,12 @@ Do the following:
 
    HINT: no function required
 */
-
-
-
+let var1 = 1;
+let var2 = 'cat';
+if (var2 === 'cat') {
+  var1 = 0;
+}
+console.log(var1);
 
 
 /*
@@ -47,8 +53,9 @@ Do the following:
 
    HINT: look up the Number method
 */
-
-
+var str = '1999';
+var num = Number(str);
+console.log('The variable num has a value of', num, 'and is a', typeof num);
 
 
 /*
@@ -60,10 +67,12 @@ Do the following:
    3. Multiply a and b and return the answer
 */
 
-function multiply(/*add your code here*/){
-  /*add your code here*/
+function multiply(a, b){
+  return a*b;
 }
-
+let num1 = 2;
+let num2 = 4;
+console.log(multiply(num1, num2));
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -76,10 +85,11 @@ Do the following:
  3. Return the newly calculated age
 */
 
-function dogYears(/*add your code here*/){
-  /*add your code here*/
+function dogYears(age){
+  return age*7;
 }
-
+let age = 5;
+console.log(dogYears(age));
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
