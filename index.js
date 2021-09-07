@@ -120,7 +120,10 @@ NOTE: If done correctly, a weight of 15 lbs and age of 1 year would return 0.449
 */  
 
 function hungryDog(weight, age){
+  /*add your code here*/
+
   if (age >= 1){ /* Equal or older than 1 year */
+
     if (weight > 15){ /* Heavier than 15 lbs */
       return weight * 0.02;
     } else if (weight > 11) { /* Heavier than 11 lbs */
@@ -130,16 +133,25 @@ function hungryDog(weight, age){
     } else { /* Up to 5lbs */
       return weight * 0.05;
     }
+
   } else if (age >= 0.583){ /* Equal or older than 7 mo*/
     return weight * 0.04;
-  } else if (age >= 0.33){ /* Equal or older than 4 mo*/
+  } else if (age > 0.33){ /*Older than 4 mo*/
     return weight * 0.05;
-  } else if (age >= 0.16) {
+  } else if (age > 0.16) {
     return weight * 0.10;
   }
+  
 }
 
-Test cases
+// Test Cases
+// console.log('Case 1:', hungryDog(4,1));
+// console.log('Case 2:', hungryDog(7,1));
+// console.log('Case 3:', hungryDog(14,1));
+// console.log('Case 4:', hungryDog(16,1));
+// console.log('Case 5:', hungryDog(20,0.2));
+// console.log('Case 6:', hungryDog(16,0.33));
+// console.log('Case 7:', hungryDog(4,0.583));
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -163,10 +175,66 @@ RULES OF THE GAME: Scissors beats Paper | Paper beats Rock | Rock beats Scissors
 HINT: Remember that the order in which we pass in our arguments matters when it comes to parameters
 */
 
-function game(user, computer){
-  /*add your code here*/
+function computerChoice (){
+  let num = Math.round ( (Math.random()*(3 - 1)) + 1);
+  if (num === 1){
+    return 'rock';
+  } else if (num === 2){
+    return 'paper';
+  } else {
+    return 'scissors'
+  }
 }
 
+function game(user, computer){
+  
+  //  - win should return "you win!"
+  //  - lose should return "you lose!"
+  //  - tie should return "it's a tie"
+  if (user === computer) {
+    return 'it\'s a tie';
+  } 
+  
+  if (user === 'rock' && computer === 'scissors' ){
+    return 'you win!';
+  }
+
+  if (user === 'rock' && computer === 'paper' ){
+    return 'you lose!';
+  }
+
+  if (user === 'paper' && computer === 'rock' ){
+    return 'you win!';
+  }
+  if (user === 'paper' && computer === 'scissors' ){
+    return 'you lose!';
+  }
+
+ if (user === 'scissors' && computer === 'paper' ){
+    return 'you win!';
+  }
+  if (user === 'scissors' && computer === 'rock' ){
+    return 'you lose!';
+  }
+  
+}
+
+
+// Test Cases
+
+// console.log(game('scissors',computerChoice())); // Random Comp Choice
+
+// console.log(game('rock','rock')); // tie
+// console.log(game('rock','scissors')); // win
+// console.log(game('rock','paper')); // lose
+
+// console.log(game('paper','paper'));
+// console.log(game('paper','rock'));
+// console.log(game('paper','scissors'));
+
+// console.log(game('scissors','scissors'));
+// console.log(game('scissors','paper'));
+// console.log(game('scissors','rock'));
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
